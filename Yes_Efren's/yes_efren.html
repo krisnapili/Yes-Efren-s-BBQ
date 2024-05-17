@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes Efren's</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, black, rgba(16, 133, 1, 0.471));
+            color: white;
+            overflow-y: scroll;
+        }
+        .header {
+            background: #333;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+        .header .logo img {
+            width: 100px;
+            height: auto;
+            margin-right: 15px;
+        }
+        .header h1 {
+            margin: 0;
+            color: rgb(255, 60, 60);
+            text-shadow: 0 0 5px #8e2626, 0 0 10px #8e2626;
+            font-size: 24px;
+        }
+        .header nav {
+            display: flex;
+            gap: 15px;
+            padding-right: 80px;
+        }
+        .header nav a {
+            color: rgb(173, 139, 139);
+            text-decoration: none;
+            text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+            border: 1px solid darkred;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .header nav a:hover {
+            color: white;
+        }
+        .welcome-container {
+            margin-top: 80px;
+            margin-bottom: 330px;
+        }
+        .welcome-message {
+            font-size: 72px;
+            font-weight: bold;
+            color: rgb(255, 60, 60);
+            text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+            margin-top: 250px;
+            animation: glow 1s infinite alternate;
+        }
+        .subtitle {
+            font-size: 24px;
+            color: rgb(255, 60, 60);
+            text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+            animation: glow 1s infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+            }
+            to {
+                text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000;
+            }
+        }
+
+        h2{
+            font-size: 180%;
+            font-weight: bold;
+            color: white;
+            margin-top: 250px;
+        }
+        h3{
+            font-size: 180%;
+            font-weight: bold;
+            color: white;
+        }
+        main {
+            padding: 80px 20px 20px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: margin-right 0.3s ease;
+        }
+        .main-content {
+            margin-right: 0;
+        }
+        .gallery-section {
+            padding: 20px;
+            text-align: center;
+            margin-top: 230px;
+            transition: margin-right 0.3s ease;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px;
+        }
+        .gallery {
+            border: 1px solid #cccccc00;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .gallery:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .gallery img {
+            width: 100%;
+            height: 580px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .featured-products{
+            border: 1px solid #cccccc00;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .featured-products:hover{
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .featured-products img{
+            width: 80%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: rgba(41, 0, 0, 0.548);
+            color: rgb(255, 255, 255);
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .footer {
+            background: #33333300;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="C:\Users\acer\Desktop\Yes_Efren's\logo\LOGO_Ye.png" alt="YES EFREN'S Logo">
+            <h1>YES EFREN'S BBQ</h1>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#gallery">Menu</a>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <div class="welcome-container">
+                <div class="welcome-message">Welcome to YES EFREN'S SPECIAL BBQ!</div>
+                <div class="subtitle">The house of BEST BARBECUE in town.</div>
+            </div>
+        </section>
+        <section id="featured" class="featured">
+            <h2>Featured Products</h2>
+            <div class="featured-products">
+                <div class="gallery">
+                    <img src="C:\Users\acer\Desktop\Yes_Efren's\Y_front_page.png" alt="Y1" data-description="YES COMBO MEALS!">
+                </div>
+            </div>
+        </section>
+        <section id="gallery" class="content">
+            <h3>Gallery of Menu</h3>
+            <div class="gallery-grid">
+                <div class="gallery">
+                    <img src="C:\Users\acer\Desktop\Yes_Efren's\y1.png" alt="Y1" data-description="YES with JAVA RICE" data-price="P95">
+                </div>
+                <div class="gallery">
+                    <img src="C:\Users\acer\Desktop\Yes_Efren's\y2.png" alt="Y2" data-description="YES na YES with JAVA RICE" data-price="P139">
+                </div>
+                <div class="gallery">
+                    <img src="C:\Users\acer\Desktop\Yes_Efren's\y3.png" alt="Y3" data-description="YES + HOTDOG with JAVA RICE" data-price="P129">
+                </div>
+                <div class="gallery">
+                    <img src="C:\Users\acer\Desktop\Yes_Efren's\y4.png" alt="Y4" data-description="YES + TENGA with JAVA RICE" data-price="P129">
+                </div>
+                <div class="gallery">
+                    <img src="C:\Users\acer\Desktop\Yes_Efren's\y5.png" alt="Y5" data-description="YES + ISAW BABOY with JAVA RICE" data-price="P129">
+                </div>
+                <div class="gallery">
+                    <img src="C:\Users\acer\Desktop\Yes_Efren's\y6.png" alt="Y6" data-description="YES + ISAW MANOK with JAVA RICE" data-price="P129">
+                </div>
+                <div class="gallery">
+                    <img src="C:\Users\acer\Desktop\Yes_Efren's\y7.png" alt="Y7" data-description="YES with FRIENDS" data-price="P235">
+                </div>
+                <div class="gallery">
+                    <img src="C:\Users\acer\Desktop\Yes_Efren's\y8.png" alt="Y8" data-description="INIHAW na LIEMPO with JAVA RICE" data-price="P229">
+                </div>
+                <div class="gallery">
+                    <img src="C:\Users\acer\Desktop\Yes_Efren's\y9.png" alt="Y9" data-description="CHICKEN BBQ (leg quarter) with JAVA RICE" data-price="P175">
+                </div>
+                <div class="gallery">
+                    <img src="C:\Users\acer\Desktop\Yes_Efren's\y10.png" alt="Y10" data-description="INIHAW na PORKCHOP with JAVA RICE" data-price="P125">
+                </div>
+                <div class="gallery">
+                    <img src="C:\Users\acer\Desktop\Yes_Efren's\y11.png" alt="Y11" data-description="YES + ISAW BILOG with JAVA RICE" data-price="P135">
+                </div>
+                <div class="gallery">
+                    <img src="C:\Users\acer\Desktop\Yes_Efren's\y13.png" alt="Y12" data-description="YES + BULAKLAK with JAVA RICE" data-price="P129">
+                </div>
+            </div>
+        </section>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img id="modal-image" src="" alt="" style="width: 100%;">
+                <p id="modal-description"></p>
+                <p id="modal-price"></p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Yes Efren's. All Rights Reserved.</p>
+        </div>
+    </main>
+    <script>
+        document.querySelectorAll('.gallery img').forEach(img => {
+            img.addEventListener('click', () => {
+                document.getElementById('modal-image').src = img.src;
+                document.getElementById('modal-description').textContent = img.dataset.description;
+                document.getElementById('modal-price').textContent = img.dataset.price;
+                document.getElementById('myModal').style.display = "block";
+            });
+        });
+        document.querySelector('.close').addEventListener('click', () => {
+            document.getElementById('myModal').style.display = "none";
+        });
+        window.addEventListener('click', (event) => {
+            if (event.target == document.getElementById('myModal')) {
+                document.getElementById('myModal').style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
